@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "richdevops/college-portal"
+        DOCKER_IMAGE = "richadevops/college-portal"
     }
 
     stages {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/richa-devops1/college-project-jenkins.git'
+                git branch: 'main', url: 'https://github.com/richa-devops1/college-project-jenkins.git'
             }
         }
 
