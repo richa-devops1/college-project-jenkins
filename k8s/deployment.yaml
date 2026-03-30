@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: college-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: college
+  template:
+    metadata:
+      labels:
+        app: college
+    spec:
+      containers:
+      - name: college
+        image: yourdockerhubusername/college-portal:latest
+        ports:
+        - containerPort: 5000
